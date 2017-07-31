@@ -1,0 +1,26 @@
+{
+  "name": "swapi",
+  "version": "1.0.0",
+  "description": "rebuild sapi",
+  "main": "server/startup.js",
+  "scripts": {
+    "test": "node server/startup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteveWooo/swapi.git"
+  },
+  "keywords": [
+    "BaaS"
+  ],
+  "author": "SteveWoo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SteveWooo/swapi/issues"
+  },
+  "homepage": "https://github.com/SteveWooo/swapi#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mysql": "^2.14.0"
+  }
+}
