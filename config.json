@@ -1,4 +1,10 @@
 {
     "clusterCount" : 1,
-    "port" : "5050"
+    "port" : "5050",
+    "mysql" : {
+        "host" : "localhost",
+        "user" : "root",
+        "password" : "lyoko123RAIN",
+        "database" : "swapi_steve"
+    }
 }
