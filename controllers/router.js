@@ -1,4 +1,5 @@
-let classCtrl = require('./class/classHandle').handle;
+let classCtrl = require('./class/classHandle').handle,
+    objCtrl = require('./obj/objHandle').handle;
 
 /*
  * 创建类： http://host:port/{class}/{create}?_appid=xxx&prop=prop1`prop2`prop3
@@ -8,8 +9,8 @@ let router = {
     'class' : {
         'create' : classCtrl
     },
-    'object' : {
-
+    'obj' : {
+        'create' : objCtrl
     },
     'list' : {
 
@@ -31,6 +32,7 @@ let getReq = (req, callback)=>{
 
     //校验路由是否存在
     if(!router[req.type] || !router[req.type][req.option]){
+        callback(403);
         return undefined;
     }
 
@@ -47,7 +49,7 @@ let handle = (req, res, next)=>{
 
         //直接返回状态码
         if(typeof data == 'number'){
-            res.send(data);
+            res.sendStatus(data);
             return ;
         }
 

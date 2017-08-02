@@ -2,6 +2,7 @@ let classCreate = require('../../model/class/create').handle;
 
 //路由
 let router = {
+    //http://localhost:5050/class/create?classname=xx&prop=s`a`q
     'create' : classCreate
 }
 
