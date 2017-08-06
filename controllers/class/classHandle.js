@@ -1,13 +1,20 @@
-let classCreate = require('../../model/class/create').handle;
+let classCreate = require('../../model/class/create').handle,
+    readClass = require('../../model/class/read').handle;
 
 //路由
 let router = {
     //http://localhost:5050/class/create?classname=xx&prop=s`a`q
-    'create' : classCreate
+    'create' : classCreate,
+    'read' : readClass
 }
 
 //处理参数 判断参数合法
 let getParams = (req, callback)=>{
+    //判断路由是否存在
+    if(!router[req.option]){
+        callback(403);
+        return undefined;
+    }
     return req;
 }
 /*
@@ -21,6 +28,10 @@ let handle = (req, callback)=>{
 
     //进入路由
     router[req.option](req).then((res)=>{
+        if(typeof res == 'string'){
+            callback(res);
+            return ;
+        }
         callback(res.data, res.message);
     }).catch((e)=>{
         callback("CATCH_ERROR", e.message);

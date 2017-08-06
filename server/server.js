@@ -9,7 +9,11 @@ let router = require('../controllers/router.js').handle;
 let handleRequest = (req, res, next)=>{
     // mysql : 
     req.mysql = mysql.createConnection(conf.mysql);
-    req.mysql.connect();
+    req.mysql.connect((err)=>{
+        if(err){
+            console.log(err);
+        }
+    });
     next();
 }
 

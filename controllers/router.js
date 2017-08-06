@@ -6,15 +6,9 @@ let classCtrl = require('./class/classHandle').handle,
  *
 */
 let router = {
-    'class' : {
-        'create' : classCtrl
-    },
-    'obj' : {
-        'create' : objCtrl
-    },
-    'list' : {
-
-    }
+    'class' : classCtrl,
+    'obj' : objCtrl,
+    'list' : {}
 }
 
 // 封装 请求path
@@ -31,7 +25,7 @@ let getReq = (req, callback)=>{
     req.option = path[1];
 
     //校验路由是否存在
-    if(!router[req.type] || !router[req.type][req.option]){
+    if(!router[req.type]){
         callback(403);
         return undefined;
     }
@@ -46,7 +40,7 @@ let handle = (req, res, next)=>{
     //todo 
     let callback = (data, message)=>{
         var result;
-
+        req.mysql.end();
         //直接返回状态码
         if(typeof data == 'number'){
             res.sendStatus(data);
@@ -68,7 +62,6 @@ let handle = (req, res, next)=>{
         if(typeof data == 'object'){
 
         }
-        req.mysql.end();
         res.send(data);
         return ;
     }
@@ -79,7 +72,7 @@ let handle = (req, res, next)=>{
     }
 
     //路由
-    router[req.type][req.option](req, callback);
+    router[req.type](req, callback);
 }
 
 exports.handle = handle;
