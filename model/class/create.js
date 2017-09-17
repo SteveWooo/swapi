@@ -17,6 +17,7 @@ let buildProp = (req)=>{
         return mysql.escape(data + " text").replace(/\'/g, '') ;
     }).join(',');
 
+    key += ",objectid varchar(32)";
     return {
         key : key,
         classname : classname

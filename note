@@ -1,0 +1,34 @@
+class:
+  read : 
+    query : {
+        prop : 属性
+        classname : 类名
+
+    }
+  create : 
+    query : {
+        prop : 属性
+        classname : 类名
+    }
+
+object :
+  create : {
+      query : {
+          classname : 类名
+          prop : 属性（用法： prop=name=123`age=999）
+      }
+  }
+  delete : {
+      query : {
+          classname : 类名
+          objectid : 对象ID
+      }
+  }
+  read : {
+      http://localhost:5050/obj/read?classname=ddd&page=0,2&filter=`name`=%22SteveWoo%22
+      query : {
+        classname : 类名
+        page : 翻页（用法：1,10）相当于Limit
+        filter : 相当于where
+      }
+  }        

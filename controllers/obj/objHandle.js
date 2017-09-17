@@ -1,9 +1,14 @@
 let objCreate = require('../../model/obj/create').handle;
+let objDelete = require('../../model/obj/delete').handle;
+let objRead = require('../../model/obj/read').handle;
 
 //路由
 let router = {
     //http://localhost:5050/obj/create?classname=xx&prop=name=q`age=14
-    'create' : objCreate
+    'create' : objCreate,
+    //http://localhost:5050/object/delete?classname=steve&objectid=1493472950094number=123`date=999
+    'delete' : objDelete,
+    'read' : objRead
 }
 
 //处理参数 判断参数合法

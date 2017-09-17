@@ -1,13 +1,19 @@
 let mysql = require('mysql');
+let crypto = require('crypto');
 // 构建SQL 并检查合法性
 let getSql = (req)=>{
     //属性
     let prop = req.query.prop.split('`');
     //类名
     let className = mysql.escape("obj_" + req.query.classname).replace(/\'/g, '`');
-    if(prop.length == 0 || className == undefined || className == ""){ //判断合法性
+    if(prop.length == 0 || className == undefined || className == "" || req.query.prop.indexOf('objectid=') > -1){ //判断合法性
         return undefined;
     }
+
+    //构造几乎为一的OBJID
+    let objid = crypto.createHash("md5").update(Math.random() + (+new Date()) + req.query.prop + req.query.classname).digest('hex');
+
+    prop.push('objectid=' + objid);
     //构建属性语句
     let key = prop.map((data)=>{
         let temp = data.split('=');
