@@ -1,0 +1,48 @@
+* {
+  padding : 0;
+  margin:0;
+}
+
+.header {
+  height: 60px;
+  background-color: #D0E9FF;
+  width:100%;
+}
+
+.header .logo {
+  height: 60px;
+  line-height: 60px;
+  margin-left: 20px;
+  font-weight: 800;
+  font-size : 20px;
+}
+
+.body {
+  width:96%;
+  margin-top:20px;
+  margin-left:2%
+}
+
+.slider {
+  width:150px;
+  position: absolute;
+  height: 400px;
+  background-color: #37C6C0;
+  border-radius: 10px;
+  border:1px solid #37c6c0;
+}
+
+.slider .item{
+  background-color:#D0E9FF;
+  padding : 16px 16px 16px 16px;
+}
+
+.slider .actived {
+  padding-left:40px;
+  font-weight: 800
+}
+
+.content {
+  padding : 16px 16px 16px 166px;
+  width:100%;
+}
