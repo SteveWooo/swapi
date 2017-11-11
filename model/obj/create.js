@@ -35,7 +35,6 @@ let create = (req, callback)=>{
         return ;
     }
 
-    console.log(sql);
     //建表并catch错误 
     req.mysql.query(sql, (err, field)=>{
         if(err){
