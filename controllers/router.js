@@ -1,5 +1,6 @@
 let classCtrl = require('./class/classHandle').handle,
-    objCtrl = require('./obj/objHandle').handle;
+    objCtrl = require('./obj/objHandle').handle,
+    listCtrl = require('./list/listHandle').handle;
 
 /*
  * 创建类： http://host:port/{class}/{create}?_appid=xxx&prop=prop1`prop2`prop3
@@ -8,7 +9,7 @@ let classCtrl = require('./class/classHandle').handle,
 let router = {
     'class' : classCtrl,
     'obj' : objCtrl,
-    'list' : {}
+    'list' : listCtrl
 }
 
 // 封装 请求path
