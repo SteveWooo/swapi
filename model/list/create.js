@@ -6,9 +6,7 @@ function insertList(req){
 		var category = req.query.category;
 
 		var sql = "INSERT INTO `lists` (`listid`, `category`) VALUES ("+mysql.escape(listid)+", "+mysql.escape(category)+")"
-		console.log(sql);
 		req.mysql.query(sql, function(err){
-			console.log(err)
 			if(err){
 				reject(err);
 				return ;
