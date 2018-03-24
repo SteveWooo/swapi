@@ -7,10 +7,10 @@ rebuilt by express
 @param classname, prop(a\`b\`c)
 
 ## obj
-### 读取:/object/read
-### 写入:/object/create
+### 读取:/obj/read
+### 写入:/obj/create
 @param classname, prop(a=content_a\`b=content_b)
-### 删除:/object/delete
+### 删除:/obj/delete
 @param classname, objectid
 
 ## list
