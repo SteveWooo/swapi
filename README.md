@@ -1,31 +1,22 @@
 # swapi
 rebuilt by express
 
-目前可用api : {
+## class
+### 读取:/class/read
+### 写入:/class/create
+@param classname, prop(a\`b\`c)
 
-    class/create, 100%
-    class/read, 100%
+## obj
+### 读取:/object/read
+### 写入:/object/create
+@param classname, prop(a=content_a\`b=content_b)
+### 删除:/object/delete
+@param classname, objectid
 
-    obj/create, 100%
-}
-
-### develop-0.0.1 ###
-2017/08/01
-1. 完成路由开发，脚手架搭建
-2. 完成class create开发
-进度：
-class/create 70%
-
-### develop-0.0.2 ###
-2017/08/02
-1. 完成obj create开发
-进度：
-obj/create 100%
-
-### develop-0.0.3 ###
-2017/08/06
-1. 修复创建类时没有插入classes表的问题
-2. 新增类表查询操作。（返回所有类）
-进度：
-class/read 100%
-class/create 100%
+## list
+### 读取:/list/read
+@param listid, category
+### 创建列表:/list/create
+@param listid, category
+### 添加对象:/list/add
+@param listid, category, objectid
